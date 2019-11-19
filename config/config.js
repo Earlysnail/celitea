@@ -4,17 +4,21 @@ const WORK_SPACE = {
 
 const MENU = [
   {
-      title: '首页',
-      url: '/',
-      childrenMenu: []
-  },{
-      title: '登录',
-      url: '/signIn',
-      childrenMenu: []
+    title: 'HOME',
+    url: '/',
+    childrenMenu: []
   }, {
-      title: '错误页面',
-      url: '/error',
-      childrenMenu: []
+    title: 'DATA',
+    url: '/data',
+    childrenMenu: []
+  }, {
+    title: 'LINK',
+    url: '/link',
+    childrenMenu: []
+  }, {
+    title: 'LOGIN',
+    url: '/login',
+    childrenMenu: []
   }
 ];
 

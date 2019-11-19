@@ -2,22 +2,27 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import store from './store'
 
-export default function(Component){
+export default function (Component) {
   class Auth extends React.Component {
-    constructor(props){ 
-      super(props)
-
+    static async getInititalProps(ctx) {
     }
-    async componentDidMount(){
+    constructor(props) {
+      super(props)
+      this.state = {}
+    }
+    async UNSAFE_componentWillMount() {
       const url = window.document.location.pathname;
       const win = window;
-      this.setState({url, win})
+      this.setState({
+        url,
+        win
+      })
     }
-    render(){
+    render() {
       return (
         <Provider store={store}>
-          <Component {...this.state}/>
-       </Provider>
+          <Component {...this.state} />
+        </Provider>
       )
     }
   }

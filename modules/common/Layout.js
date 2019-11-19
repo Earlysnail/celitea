@@ -4,11 +4,18 @@ import HeaderBar from '../../components/HeaderBar'
 class Layout extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+
+		}
   }
+  async componentWillMount() {
+	}
+	async componentDidMount() {
+	}
   render() {
     return (
       <main>
-        <HeaderBar {...this.props} />
+        <HeaderBar url={this.props.url} home={this.props.home}></HeaderBar>
         {
           this.props.children
         }

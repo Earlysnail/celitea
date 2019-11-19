@@ -4,7 +4,7 @@ import Home from '../modules/home'
 export default withData((props) => {
   return (
     <Layout  {...props}>
-      <Home />
+      <Home {...props} />
     </Layout>
   )
 })
