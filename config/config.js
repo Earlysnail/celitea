@@ -2,6 +2,8 @@ const WORK_SPACE = {
   NAME: 'celitea'
 }
 
+const PORT = 9000
+
 const MENU = [
   {
     title: 'HOME',
@@ -20,11 +22,11 @@ const MENU = [
     url: '/login',
     childrenMenu: []
   }
-];
-
+]
 
 
 export {
   WORK_SPACE,
-  MENU
+  MENU,
+  PORT
 }

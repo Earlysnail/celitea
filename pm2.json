@@ -1,0 +1,7 @@
+{
+  "apps":[{
+    "name": "celitea",
+    "script": "server.js",
+    "watch": true
+  }]
+}
