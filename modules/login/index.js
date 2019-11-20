@@ -25,7 +25,7 @@ class Login extends Component {
   }
   render() {
     return (
-      <div className='Login'>
+      <div className='login'>
         <div className='container'>
           <h3>登录</h3>
           <section>
@@ -41,12 +41,11 @@ class Login extends Component {
           </section>
         </div>
         <style global jsx>{`
-                .Login {
-                    padding: 3rem 1rem;
+                .login {
                     display: flex;
                     justify-content: center;
                 }
-                .container {
+                .login .container {
                     height: 18rem;
                     width: 20rem;
                     padding: 2.5rem 1.2rem;
@@ -55,7 +54,7 @@ class Login extends Component {
                     box-shadow: 0 10px 20px 0px rgba(0, 0, 0, .05);
                     text-align: center;
                 }
-                dt .btn{
+                .login dt .btn{
                   margin: 0;
                   padding: 0;
                   text-align: center;
@@ -68,12 +67,12 @@ class Login extends Component {
                   color: #FFF;
                   font-size: 1rem;
                 }
-                section{
+                .login section{
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                 }
-                section dl{
+                .login section dl{
                     padding: 1.2rem 0;
                 }
                 `}
