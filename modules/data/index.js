@@ -32,6 +32,27 @@ class Data extends Component {
         desc: '软件工程师'
       }
     ]
+    var list = [
+			{
+				year: '2018',
+				desc: '18届毕业生',
+				members: array,
+				color: '#3564f3',
+				mark: false
+			}, {
+				year: '2019',
+				desc: '19届毕业生',
+				members: array,
+				color: '#345344',
+				mark: false
+			}, {
+				year: '2020',
+				desc: '20届毕业生',
+				members: array,
+				color: '#634343',
+				mark: false
+			},
+		]
     return (
       <div className='data'>
         <div className="operateLine">
@@ -41,7 +62,7 @@ class Data extends Component {
         </div>
         <div className="menber">
           {
-            array.map((item, index) => {
+            array.map((item) => {
               return (
                 <div id="wrap">
                   <div className="head">

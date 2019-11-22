@@ -15,7 +15,7 @@ class Layout extends Component {
   render() {
     return (
       <main>
-        <HeaderBar url={this.props.url} home={this.props.home}></HeaderBar>
+        <HeaderBar { ...this.props }></HeaderBar>
         {
           this.props.children
         }

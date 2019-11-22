@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Router from 'next/router'
+import { login } from '../../ducks'
 
 class Login extends Component {
   constructor(props) {
@@ -16,12 +17,12 @@ class Login extends Component {
   async submit() {
     const username = this.state.username;
     const password = this.state.password;
-    const data = await this.props.doLogin({ username, password })
+    const data = await this.props.login({ username, password })
     if (data.code == 1) {
       console.log(data.message)
       return
     }
-    Router.push('/radar')
+    Router.push('/link')
   }
   render() {
     return (
@@ -87,6 +88,7 @@ const mapStateToProps = ((state) => {
   }
 })
 const mapDispatchToProps = {
+  login
 }
 
 export default connect(

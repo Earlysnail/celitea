@@ -12,7 +12,10 @@ const MENU = [
   }, {
     title: 'DATA',
     url: '/data',
-    childrenMenu: []
+    childrenMenu: [{
+      title: 'addMember',
+      url: '/data/addMember'
+    }]
   }, {
     title: 'LINK',
     url: '/link',
