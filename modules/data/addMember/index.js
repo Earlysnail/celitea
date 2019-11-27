@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react'
-import { Radio, DatePicker } from 'antd'
+import { Radio, DatePicker, Button } from 'antd'
+import moment from 'moment';
+import { getKeyFromChildrenIndex } from 'rc-menu/lib/util'
 
 class AddMember extends Component {
   constructor(props) {
@@ -23,8 +25,30 @@ class AddMember extends Component {
       companyAddress: '',
     }
   }
+  submit = () => {
+    const { id, name, sex, birthDate, graduateGrade, profession, email, phone, wechat, qq, blogAddress, currentAddress, githubAddress, hometown, companyAddress } = this.state
+    console.log('表单：', {
+      id,
+      name,
+      sex,
+      birthDate: moment(),
+      graduateGrade,
+      profession,
+      email,
+      phone,
+      wechat,
+      qq,
+      blogAddress,
+      currentAddress,
+      githubAddress,
+      hometown,
+      companyAddress
+    })
+  }
+
   render() {
     const { id, name, sex, birthDate, graduateGrade, profession, email, phone, wechat, qq, blogAddress, currentAddress, githubAddress, hometown, companyAddress } = this.state
+    console.log(moment(birthDate).format("YYYY-MM-DD"))
     return (
       <div className='addMember'>
         <div className="fromWrap">
@@ -38,7 +62,9 @@ class AddMember extends Component {
                 onChange={e => this.setState({ name: e.target.value })}
               ></input>
               <lable>性别：</lable>
-              <Radio.Group value={this.state.sex}>
+              <Radio.Group
+                value={this.state.sex}
+                onChange={(e) => this.setState({ sex: e.target.value })}>
                 <Radio value={1}>男</Radio>
                 <Radio value={2}>女</Radio>
               </Radio.Group>
@@ -109,7 +135,9 @@ class AddMember extends Component {
               ></input>
 
               <span>出生日期：</span>
-              <DatePicker />
+              <DatePicker
+                onChange={(e) => this.setState({ birthDate: e })}
+              />
             </li>
             <li>
               <lable>公司：</lable>
@@ -123,11 +151,14 @@ class AddMember extends Component {
             </li>
           </ul>
         </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button type="primary" onClick={this.submit}>提交</Button>
+        </div>
         <style jsx>{`
         .addMember{
         }
         .fromWrap{
-          margin: 4rem auto;
+          margin: 4rem auto 1rem;
           display: flex;
           justify-content: center;
         }

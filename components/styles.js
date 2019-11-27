@@ -11,7 +11,6 @@ export function style() {
         color: ${theme.fontcolor};
         font-weight: ${theme.fontweight};
         margin: 0;
-        padding: 0 5%;
       }
       ol,ul,dl,dd,p,dl,p,h3{
         margin: 0 !important;

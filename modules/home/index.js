@@ -1,10 +1,11 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import Router from 'next/router'
 
 const img1 = '../../static/1.jpg'
 const img2 = '../../static/2.jpg'
 const img5 = '../../static/5.jpg'
-
+const bgImage = '../../static/bgImage.png'
 
 
 class Home extends Component {
@@ -45,15 +46,25 @@ class Home extends Component {
       })
     }
   }
+  joinClitea = () => {
+    console.log('asjnjas')
+    Router.push('/data/addMember')
+  }
   render() {
     return (
       <div className='home'>
-        <div className="onePage"></div>
-        <div className="pageContent">
-          <h1 className="mainName">计算机精英协会</h1>
-          <p className="scieName">我挥舞着键盘和本子，<br/>发誓要把这世界写的明明白白</p>
-          <span className="btn leftBtn">加入我们</span>
-          <span className="btn rightBtn">录入信息</span>
+        <div className="oncePage">
+          <div className="pageContent">
+            <h1 className="mainName">计算机精英协会</h1>
+            <p className="scieName">我挥舞着键盘和本子，<br />发誓要把这世界写的明明白白</p>
+            <div className="btn">
+              <span className="leftBtn" onClick={this.joinClitea}>加入我们</span>
+              <span className="rightBtn" >录入信息</span>
+            </div>
+          </div>
+          <div className="bgImage">
+            <img src={bgImage}></img>
+          </div>
         </div>
         <div className="backgroundImage bg1" ref="img1">
           <div className="shadow"></div>
@@ -67,53 +78,52 @@ class Home extends Component {
         <div className="header">
           <h1 style={{ height: '20rem', textAlign: 'center' }}>计算机精英协会</h1>
         </div>
+        {/*  ${(this.props.win && this.props.win.innerHeight || 1000)-300}px; */}
         <style global jsx>{`
               body, h1{
                 margin: 0;
                 padding: 0;
               }
-              .onePage{
-                position: relative;
-                overflow: hidden;
-                background-size: cover;
-                height:${this.props.win && this.props.win.innerHeight || 1000}px;
+              .oncePage{
+                min-height: 50rem;
                 width:100%;
-                z-index: 1;
+                background-color: #f7f1f1;
               }
-              .onePage:after{
-                content:'';
-                width:100%;
-                height:100%;
+              .bgImage{
                 position: absolute;
-                left:0;
-                top:0;
-                background: inherit;
-                filter: blur(2px);
-                z-index: 2;
+                top:25%;
+                right:5%;
+                height: 70%;
+                width: 45%;
+                overflow: hidden;
+                z-index: 11;
+              }
+              .bgImage img{
+                width:100%;
               }
               .pageContent{
+                width:45%;
                 position: absolute;
-                left: 12%;
-                top: 30%;
-                z-index: 11;
+                top:30%;
+                left:5%;
+                justify-content: center;
               }
               .pageContent .mainName{
                 margin-bottom: 1.5rem;
-                font-size: 3rem;
+                font-size: 4rem;
               }
               .pageContent .scieName{
                 margin-bottom: .5rem;
                 color: #b1acac;
                 font-size: 1.5rem;
               }
-              .pageContent .btn{
+              .pageContent .btn span{
                 display: inline-block;
                 height: 3rem;
                 line-height: 3rem;
                 width: 10rem;
-                font-size: 1.5rem;
                 margin: 2rem 2rem 2rem 0;
-                border-radius: 20px;
+                border-radius: 50px;
                 text-align: center;
                 cursor: pointer;
                 z-index: 11;
@@ -124,6 +134,26 @@ class Home extends Component {
               }
               .pageContent  .rightBtn{
                 border: .1rem solid #2ea2a2;
+              }
+              @media screen and (max-width: 1024px){
+                .pageContent{
+                  width:90%;
+                  text-align:center;
+                }
+                .pageContent .mainName{
+                  font-size: 2.5rem;
+                }
+                .pageContent .scieName{
+                  font-size: 1rem;
+                }
+                .pageContent .btn span{
+                  display: block;
+                  margin: 1rem auto;
+                }
+                .bgImage{
+                  width:90%;
+                  top: 80%;
+                }
               }
               .backgroundImage {
                 box-shadow:0 7px 18px #000000 inset,0 -7px 18px #000000 inset;
@@ -137,7 +167,7 @@ class Home extends Component {
                 width:100%;
                 overflow:hidden;
                 margin:auto;
-                height:${this.props.win && this.props.win.innerHeight/2 || 500}px;
+                height: 500px;
               }
               .bg1{
                 background: url(${img5}) center center no-repeat;

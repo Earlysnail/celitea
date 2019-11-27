@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-
+import { Timeline } from 'antd'
 const img1 = "../../static/1.jpg";
 const img2 = "../../static/2.jpg";
 const img3 = "../../static/3.jpg";
@@ -33,26 +33,26 @@ class Data extends Component {
       }
     ]
     var list = [
-			{
-				year: '2018',
-				desc: '18届毕业生',
-				members: array,
-				color: '#3564f3',
-				mark: false
-			}, {
-				year: '2019',
-				desc: '19届毕业生',
-				members: array,
-				color: '#345344',
-				mark: false
-			}, {
-				year: '2020',
-				desc: '20届毕业生',
-				members: array,
-				color: '#634343',
-				mark: false
-			},
-		]
+      {
+        year: '2018',
+        desc: '18届毕业生',
+        members: array,
+        color: '#3564f3',
+        mark: false
+      }, {
+        year: '2019',
+        desc: '19届毕业生',
+        members: array,
+        color: '#345344',
+        mark: false
+      }, {
+        year: '2020',
+        desc: '20届毕业生',
+        members: array,
+        color: '#634343',
+        mark: false
+      },
+    ]
     return (
       <div className='data'>
         <div className="operateLine">
@@ -60,23 +60,58 @@ class Data extends Component {
           <span>按时间排序</span>
           <span className="btn">上传资源</span>
         </div>
-        <div className="menber">
-          {
-            array.map((item) => {
-              return (
-                <div id="wrap">
-                  <div className="head">
-                    <div className="img">
-                      <img src={item.img}></img>
-                    </div>
-                    <h3>{item.name}</h3>
-                  </div>
-                  <div className="desc">{item.desc}</div>
-                </div>)
-            })
-          }
+        <div>
+          <Timeline>
+            <Timeline.Item color="green">
+              <p style={{ paddingLeft: '2rem' }}>2019</p>
+              <div className="menber">
+                {
+                  array.map((item) => {
+                    return (
+                      <div id="wrap">
+                        <div className="head">
+                          <div className="img">
+                            <img src={item.img}></img>
+                          </div>
+                          <h3>{item.name}</h3>
+                        </div>
+                        <div className="desc">{item.desc}</div>
+                      </div>)
+                  })
+                }
+              </div>
+            </Timeline.Item>
+            <Timeline.Item color="green">
+              <p style={{ paddingLeft: '2rem' }}>2019</p>
+              <div className="menber">
+                {
+                  array.map((item) => {
+                    return (
+                      <div id="wrap">
+                        <div className="head">
+                          <div className="img">
+                            <img src={item.img}></img>
+                          </div>
+                          <h3>{item.name}</h3>
+                        </div>
+                        <div className="desc">{item.desc}</div>
+                      </div>)
+                  })
+                }
+              </div>
+            </Timeline.Item>
+            <Timeline.Item color="green">
+              <p style={{ paddingLeft: '2rem' }}>至今。。。</p>
+            </Timeline.Item>
+          </Timeline>
         </div>
         <style jsx>{`
+          .data{
+            padding: 0 5%;
+          }
+          .data .operateLine{
+            padding: 1rem;
+          }
           .data .operateLine span{
             margin-right: 2rem;
             padding: 1rem;
@@ -97,13 +132,12 @@ class Data extends Component {
           }
           .data .menber{
             display:flex;
-            justify-content: space-between;
+            justify-content: left;
           }
           .menber #wrap{
               width: 14rem;
               margin: 3rem 1rem;
               background-color: #f5f8fa;
-              border: .1rem solid #e4ecf3;
               border-radius: 10px;
               text-align: center;
               transition: all .3s ease;
@@ -143,4 +177,8 @@ class Data extends Component {
 }
 
 export default Data
+
+
+
+
 

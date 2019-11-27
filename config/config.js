@@ -6,22 +6,24 @@ const PORT = 9000
 
 const MENU = [
   {
-    title: 'HOME',
+    title: '首页',
     url: '/',
     childrenMenu: []
   }, {
-    title: 'DATA',
-    url: '/data',
-    childrenMenu: [{
-      title: 'addMember',
-      url: '/data/addMember'
-    }]
-  }, {
-    title: 'LINK',
+    title: '分享',
     url: '/link',
     childrenMenu: []
   }, {
-    title: 'LOGIN',
+    title: '成员',
+    url: '/data',
+    childrenMenu: [
+      {
+        title: 'addMember',
+        url: '/data/addMember'
+      }
+    ]
+  }, {
+    title: '登录',
     url: '/login',
     childrenMenu: []
   }

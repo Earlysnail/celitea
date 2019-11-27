@@ -43,7 +43,7 @@ class Link extends Component {
           {
             array.map((item, index) => {
               return (
-                <div id="wrap">
+                <div id="wrap" key={index}>
                   <div className="head">
                     <img src={item.img}></img>
                     <p className="name">{item.name}</p>
@@ -59,6 +59,9 @@ class Link extends Component {
           }
         </div>
         <style jsx>{`
+          .linkWrap{
+            padding: 1% 5%;
+          }
           .linkWrap .operateLine span{
             margin-right: 2rem;
             padding: 1rem;
@@ -87,7 +90,6 @@ class Link extends Component {
               margin: 2rem 1rem;
               padding: 1rem 2rem;
               background-color: #f5f8fa;
-              border: .1rem solid #e4ecf3;
               border-radius: 10px;
               transition: all .3s ease;
           }

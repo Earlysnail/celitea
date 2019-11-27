@@ -7,11 +7,14 @@ class HeaderBar extends Component {
     super(props)
   }
   render() {
-    console.log('props', this.props)
     const logo = this.props.logo || '../../static/celitea.jpg';
     const curUrl = this.props.url;
     const curUrlKeywords = curUrl && curUrl.split('/') || [];
     const curUrlKeyword = curUrlKeywords.length > 1 ? curUrlKeywords[1] : '/'
+    //  console.log('curUrl', this.props.url)
+    // console.log('curUrlKeywords', curUrlKeywords)
+    // console.log('curUrlKeyword', curUrlKeyword)
+
     return (
       <div className="headerBar">
         <section className="nav">
@@ -25,10 +28,17 @@ class HeaderBar extends Component {
               MENU.map((item, iKey) => {
                 const itemUrlKeywords = item.url && item.url.split('/') || [];
                 const itemUrlKeyword = itemUrlKeywords.length > 1 ? itemUrlKeywords[1] : '/'
+                //  console.log('item', item.url)
+                // console.log('itemUrlKeywords', itemUrlKeywords)
+                // console.log('itemUrlKeyword', itemUrlKeyword)
                 return (
                   <li
                     className={itemUrlKeyword == curUrlKeyword ? 'curLi' : ''}
-                    onClick={() => { Router.push(item.url) }}
+                    onClick={() => {
+                      console.log('item', item.url)
+                      Router.push(item.url)
+                    }
+                    }
                     key={iKey}>
                     {item.title}
                   </li>
@@ -39,16 +49,16 @@ class HeaderBar extends Component {
         </section>
         <style>{`
         .headerBar{
-          width: 100%;
           font-size: 1rem;
           z-index: 900;
+          background-color: #f7f1f1;
+          padding: 1% 5%;
         }
         .nav{
           height: 3.4rem;
           display: flex;
           justify-content: space-between;
           flex-wrap: nowrap;
-          padding: 1% 0;
         }
         .nav_right{
           width: 30%;
@@ -56,8 +66,13 @@ class HeaderBar extends Component {
           justify-content: space-between;
           flex-wrap: nowrap;
         }
+        @media screen and (max-width: 1024px){
+          .nav_right{
+            width:60%;
+          }
+        }
         .nav_right li.curLi{
-          color: #09F7F7;
+          color: #2ea2a2;
         }
         .nav_right li{
           font-size: 1rem;
@@ -65,7 +80,7 @@ class HeaderBar extends Component {
           cursor: pointer;
         }
         .nav_right li:hover{
-          color: #09F7F7;
+          color: #2ea2a2;
         }
         .nav_left {
           width: 20%;
