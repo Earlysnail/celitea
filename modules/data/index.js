@@ -30,6 +30,38 @@ class Data extends Component {
         name: '陈少波',
         img: img4,
         desc: '软件工程师'
+      },{
+        name: '马文涛',
+        img: img1,
+        desc: '前端工程师'
+      }, {
+        name: '张璞',
+        img: img2,
+        desc: '软件工程师'
+      }, {
+        name: '孙立伟',
+        img: img3,
+        desc: '安卓工程师'
+      }, {
+        name: '陈少波',
+        img: img4,
+        desc: '软件工程师'
+      },{
+        name: '马文涛',
+        img: img1,
+        desc: '前端工程师'
+      }, {
+        name: '张璞',
+        img: img2,
+        desc: '软件工程师'
+      }, {
+        name: '孙立伟',
+        img: img3,
+        desc: '安卓工程师'
+      }, {
+        name: '陈少波',
+        img: img4,
+        desc: '软件工程师'
       }
     ]
     var list = [
@@ -58,48 +90,35 @@ class Data extends Component {
         <div className="operateLine">
           <span>按热度排序</span>
           <span>按时间排序</span>
-          <span className="btn">上传资源</span>
+          {/* <span className="btn">上传资源</span> */}
         </div>
-        <div>
+        <div className='memberList'>
           <Timeline>
-            <Timeline.Item color="green">
-              <p style={{ paddingLeft: '2rem' }}>2019</p>
-              <div className="menber">
-                {
-                  array.map((item) => {
-                    return (
-                      <div id="wrap">
-                        <div className="head">
-                          <div className="img">
-                            <img src={item.img}></img>
-                          </div>
-                          <h3>{item.name}</h3>
-                        </div>
-                        <div className="desc">{item.desc}</div>
-                      </div>)
-                  })
-                }
-              </div>
-            </Timeline.Item>
-            <Timeline.Item color="green">
-              <p style={{ paddingLeft: '2rem' }}>2019</p>
-              <div className="menber">
-                {
-                  array.map((item) => {
-                    return (
-                      <div id="wrap">
-                        <div className="head">
-                          <div className="img">
-                            <img src={item.img}></img>
-                          </div>
-                          <h3>{item.name}</h3>
-                        </div>
-                        <div className="desc">{item.desc}</div>
-                      </div>)
-                  })
-                }
-              </div>
-            </Timeline.Item>
+            {
+              list.map((item, ikey) => {
+                return (
+                  <Timeline.Item color={item.color} key={ikey}>
+                    <p style={{ paddingLeft: '2rem' }}>{item.year}-{item.desc}</p>
+                    <div className="menber">
+                      {
+                        item.members.map((ele, index) => {
+                          return (
+                            <div id="wrap" key={index}>
+                              <div className="head">
+                                <div className="img">
+                                  <img src={ele.img}></img>
+                                </div>
+                                <h3>{ele.name}</h3>
+                              </div>
+                              <div className="desc">{ele.desc}</div>
+                            </div>)
+                        })
+                      }
+                    </div>
+                  </Timeline.Item>
+                )
+              })
+            }
             <Timeline.Item color="green">
               <p style={{ paddingLeft: '2rem' }}>至今。。。</p>
             </Timeline.Item>
@@ -132,11 +151,15 @@ class Data extends Component {
           }
           .data .menber{
             display:flex;
-            justify-content: left;
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          .memberList{
+            padding: 2rem;
           }
           .menber #wrap{
               width: 14rem;
-              margin: 3rem 1rem;
+              margin: 2rem 1rem;
               background-color: #f5f8fa;
               border-radius: 10px;
               text-align: center;
@@ -153,16 +176,18 @@ class Data extends Component {
           .menber .head{
               padding: .2rem .1rem;
           }
-          .menber .img{
-              width: 6rem;
-              height:6rem;
+          .menber img{
+              width: 5.5rem;
+              height:5.5rem;
+              padding: .5rem;
               border-radius: 50%;
               overflow: hidden;
               display: inline-block;
+
           }
           .menber .desc{
-              background-color: #fff;
               color: #919191;
+              background-color: #f5f8fa;
               line-height: 60px;
               height: 60px;
               white-space: nowrap;

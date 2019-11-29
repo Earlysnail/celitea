@@ -55,11 +55,13 @@ class Home extends Component {
       <div className='home'>
         <div className="oncePage">
           <div className="pageContent">
-            <h1 className="mainName">计算机精英协会</h1>
-            <p className="scieName">我挥舞着键盘和本子，<br />发誓要把这世界写的明明白白</p>
-            <div className="btn">
-              <span className="leftBtn" onClick={this.joinClitea}>加入我们</span>
-              <span className="rightBtn" >录入信息</span>
+            <div className="content">
+              <h1 className="mainName">计算机精英协会</h1>
+              <p className="scieName">我挥舞着键盘和本子，<br />发誓要把这世界写的明明白白</p>
+              <div className="btn">
+                <span className="leftBtn" onClick={this.joinClitea}>加入我们</span>
+                <span className="rightBtn" >录入信息</span>
+              </div>
             </div>
           </div>
           <div className="bgImage">
@@ -84,29 +86,32 @@ class Home extends Component {
                 margin: 0;
                 padding: 0;
               }
+              @media screen and (min-width: 1024px){
               .oncePage{
-                min-height: 50rem;
+                min-height: 55rem;
                 width:100%;
+                display: flex;
+                justify-content: center;
                 background-color: #f7f1f1;
               }
               .bgImage{
-                position: absolute;
-                top:25%;
-                right:5%;
-                height: 70%;
                 width: 45%;
-                overflow: hidden;
-                z-index: 11;
               }
               .bgImage img{
+                position: relative;
                 width:100%;
+                top:50%;
+                transform:translateY(-50%);
               }
               .pageContent{
                 width:45%;
-                position: absolute;
-                top:30%;
-                left:5%;
-                justify-content: center;
+              }
+              .content{
+                display: inline-block;
+                position: relative;
+                top:50%;
+                left:20%;
+                transform:translateY(-50%);
               }
               .pageContent .mainName{
                 margin-bottom: 1.5rem;
@@ -135,24 +140,51 @@ class Home extends Component {
               .pageContent  .rightBtn{
                 border: .1rem solid #2ea2a2;
               }
+            }
               @media screen and (max-width: 1024px){
+                .oncePage{
+                  width:100%;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  background-color: #f7f1f1;
+                }
                 .pageContent{
-                  width:90%;
+                  width:100%;
                   text-align:center;
                 }
                 .pageContent .mainName{
+                  margin-bottom: 1.5rem;
                   font-size: 2.5rem;
                 }
                 .pageContent .scieName{
                   font-size: 1rem;
+                  margin-bottom: .5rem;
+                  color: #b1acac;
                 }
                 .pageContent .btn span{
                   display: block;
+                  height: 3rem;
+                  line-height: 3rem;
+                  width: 10rem;
                   margin: 1rem auto;
+                  border-radius: 50px;
+                  text-align: center;
+                  cursor: pointer;
+                  z-index: 11;
+                }
+                .pageContent  .leftBtn{
+                  background-color: #2ea2a2;
+                  color: #FFF;
+                }
+                .pageContent  .rightBtn{
+                  border: .1rem solid #2ea2a2;
                 }
                 .bgImage{
-                  width:90%;
-                  top: 80%;
+                  width:100%;
+                }
+                .bgImage img{
+                  width:100%;
                 }
               }
               .backgroundImage {
