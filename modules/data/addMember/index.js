@@ -58,7 +58,7 @@ class AddMember extends Component {
           <ul>
             <li>
               <dt>
-                <lable>姓名：</lable>
+                <label>姓名：</label>
                 <Input
                   placeholder="请输入姓名"
                   type='text'
@@ -74,7 +74,7 @@ class AddMember extends Component {
                 />
               </dt>
               <dt>
-                <lable>性别：</lable>
+                <label>性别：</label>
                 <Radio.Group
                   value={this.state.sex}
                   onChange={(e) => this.setState({ sex: e.target.value })}>
@@ -85,7 +85,7 @@ class AddMember extends Component {
             </li>
             <li>
               <dt>
-                <lable>邮箱：</lable>
+                <label>邮箱：</label>
                 <Input
                   placeholder="请输入邮箱"
                   type='text'
@@ -101,7 +101,7 @@ class AddMember extends Component {
                 />
               </dt>
               <dt>
-                <lable>QQ：</lable>
+                <label>QQ：</label>
                 <Input
                   placeholder="请输入QQ"
                   type='text'
@@ -119,7 +119,7 @@ class AddMember extends Component {
             </li>
             <li>
               <dt>
-                <lable>学号：</lable>
+                <label>学号：</label>
                 <Input
                   placeholder="请输入学号"
                   type='text'
@@ -135,7 +135,7 @@ class AddMember extends Component {
                 />
               </dt>
               <dt>
-                <lable>手机号：</lable>
+                <label>手机号：</label>
                 <Input
                   placeholder="请输入手机"
                   type='text'
@@ -153,7 +153,7 @@ class AddMember extends Component {
             </li>
             <li>
               <dt>
-                <lable>微信：</lable>
+                <label>微信：</label>
                 <Input
                   placeholder="请输入微信"
                   type='text'
@@ -169,7 +169,7 @@ class AddMember extends Component {
                 />
               </dt>
               <dt>
-                <lable>github：</lable>
+                <label>github：</label>
                 <Input
                   placeholder="请输入github"
                   type='text'
@@ -187,7 +187,7 @@ class AddMember extends Component {
             </li>
             <li>
               <dt>
-                <lable>专业：</lable>
+                <label>专业：</label>
                 <Input
                   placeholder="请输入专业"
                   type='text'
@@ -203,7 +203,7 @@ class AddMember extends Component {
                 />
               </dt>
               <dt>
-                <lable>博客地址：</lable>
+                <label>博客地址：</label>
                 <Input
                   placeholder="请输入博客"
                   type='text'
@@ -221,7 +221,7 @@ class AddMember extends Component {
             </li>
             <li>
               <dt>
-                <lable>年级：</lable>
+                <label>年级：</label>
                 <Input
                   placeholder="请输入年级"
                   type='text'
@@ -237,7 +237,7 @@ class AddMember extends Component {
                 />
               </dt>
               <dt>
-                <lable>出生日期：</lable>
+                <label>出生日期：</label>
                 <DatePicker
                   onChange={(e) => this.setState({ birthDate: e })}
                 />
@@ -246,7 +246,7 @@ class AddMember extends Component {
 
             <li>
               <dt>
-                <lable>公司：</lable>
+                <label>公司：</label>
                 <Input
                   placeholder="公司"
                   type='text'
@@ -262,13 +262,13 @@ class AddMember extends Component {
                 />
               </dt>
               <dt>
-                <lable>参加社团日期：</lable>
+                <label>参加社团日期：</label>
                 <DatePicker />
               </dt>
             </li>
             <li>
               <dt>
-                <lable>住址：</lable>
+                <label>住址：</label>
                 <Input
                   placeholder="请输入现住址"
                   type='text'
@@ -319,7 +319,7 @@ class AddMember extends Component {
           .fromWrap ul li dt{
             margin-left: 10%;
           }
-          .fromWrap ul li dt lable{
+          .fromWrap ul li dt label{
             display: inline-block;
             min-width: 4rem;
           }
@@ -348,7 +348,7 @@ class AddMember extends Component {
           .fromWrap ul li dt {
             margin-top: 1rem;
           }
-          .fromWrap ul li dt lable{
+          .fromWrap ul li dt label{
             display: inline-block;
             min-width: 4rem;
           }ÎÍ

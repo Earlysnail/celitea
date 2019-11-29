@@ -34,7 +34,7 @@ class Login extends Component {
           <section>
             <dl>
               <dt>
-                <lable>用户名：</lable>
+                <label>用户名：</label>
                 <Input
                   placeholder="请输入用户名"
                   type='text'
@@ -52,7 +52,7 @@ class Login extends Component {
             </dl>
             <dl>
               <dt>
-                <lable>密&nbsp;&nbsp;&nbsp;码:</lable>
+                <label>密&nbsp;&nbsp;&nbsp;码:</label>
                 <Input
                   placeholder="请输入密码"
                   type='password'
@@ -111,7 +111,7 @@ class Login extends Component {
           .login section dl{
               padding: 1.2rem 0;
           }
-          .login section dl dt lable{
+          .login section dl dt label{
             display: inline-block;
             min-width: 5rem;
           }
@@ -151,7 +151,7 @@ class Login extends Component {
           .login section dl{
               padding: 1rem 0;
           }
-          .login section dl dt lable{
+          .login section dl dt label{
             display: inline-block;
           }
         }
