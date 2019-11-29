@@ -7,13 +7,10 @@ class HeaderBar extends Component {
     super(props)
   }
   render() {
-    const logo = this.props.logo || '../../static/celitea.jpg';
+    const logo = this.props.logo || '../../static/celiteays.jpg';
     const curUrl = this.props.url;
     const curUrlKeywords = curUrl && curUrl.split('/') || [];
     const curUrlKeyword = curUrlKeywords.length > 1 ? curUrlKeywords[1] : '/'
-    //  console.log('curUrl', this.props.url)
-    // console.log('curUrlKeywords', curUrlKeywords)
-    // console.log('curUrlKeyword', curUrlKeyword)
 
     return (
       <div className="headerBar">
@@ -28,9 +25,6 @@ class HeaderBar extends Component {
               MENU.map((item, iKey) => {
                 const itemUrlKeywords = item.url && item.url.split('/') || [];
                 const itemUrlKeyword = itemUrlKeywords.length > 1 ? itemUrlKeywords[1] : '/'
-                //  console.log('item', item.url)
-                // console.log('itemUrlKeywords', itemUrlKeywords)
-                // console.log('itemUrlKeyword', itemUrlKeyword)
                 return (
                   <li
                     className={itemUrlKeyword == curUrlKeyword ? 'curLi' : ''}

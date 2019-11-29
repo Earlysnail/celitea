@@ -1,10 +1,10 @@
 
 import React, { Component } from 'react'
 
-const img1 = "../../static/1.jpg";
-const img2 = "../../static/2.jpg";
-const img3 = "../../static/3.jpg";
-const img4 = "../../static/4.jpg";
+const img1 = "../../static/1ys.jpg";
+const img2 = "../../static/2ys.jpg";
+const img3 = "../../static/5ys.jpg";
+const img4 = "../../static/4ys.jpg";
 
 class Link extends Component {
   constructor(props) {

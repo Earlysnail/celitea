@@ -2,10 +2,10 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 import Router from 'next/router'
 
-const img1 = '../../static/1.jpg'
-const img2 = '../../static/2.jpg'
-const img5 = '../../static/5.jpg'
-const bgImage = '../../static/bgImage.png'
+const img1 = '../../static/1ys.jpg'
+const img2 = '../../static/2ys.jpg'
+const img5 = '../../static/5ys.jpg'
+const bgImage = '../../static/bgImageys.png'
 
 
 class Home extends Component {
