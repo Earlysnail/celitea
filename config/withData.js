@@ -5,6 +5,9 @@ import store from './store'
 export default function (Component) {
   class Auth extends React.Component {
     static async getInititalProps(ctx) {
+      if (!process.browser) {
+      }
+      return 
     }
     constructor(props) {
       super(props)

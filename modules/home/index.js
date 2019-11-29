@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import Router from 'next/router'
-
 const img1 = '../../static/1ys.jpg'
 const img2 = '../../static/2ys.jpg'
 const img5 = '../../static/5ys.jpg'

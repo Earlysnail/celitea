@@ -2,6 +2,7 @@ import { Component } from 'react'
 import theme from '../theme'
 import Router from 'next/router'
 import { MENU } from '../../config'
+import { Icon } from 'antd'
 class HeaderBar extends Component {
   constructor(props) {
     super(props)
@@ -11,7 +12,7 @@ class HeaderBar extends Component {
     const curUrl = this.props.url;
     const curUrlKeywords = curUrl && curUrl.split('/') || [];
     const curUrlKeyword = curUrlKeywords.length > 1 ? curUrlKeywords[1] : '/'
-
+    // console.log('11', curUrl, curUrlKeywords, curUrlKeyword)
     return (
       <div className="headerBar">
         <section className="nav">
@@ -27,7 +28,7 @@ class HeaderBar extends Component {
                 const itemUrlKeyword = itemUrlKeywords.length > 1 ? itemUrlKeywords[1] : '/'
                 return (
                   <li
-                    className={itemUrlKeyword == curUrlKeyword ? 'curLi' : ''}
+                    className={(itemUrlKeyword === curUrlKeyword) ? 'curLi' : ''}
                     onClick={() => {
                       console.log('item', item.url)
                       Router.push(item.url)
@@ -41,6 +42,7 @@ class HeaderBar extends Component {
             }
           </ul>
         </section>
+        <Icon style={{ display: 'none' }}></Icon>
         <style>{`
         .headerBar{
           font-size: 1rem;
