@@ -11,7 +11,6 @@ class HeaderBar extends Component {
     const curUrl = this.props.url;
     const curUrlKeywords = curUrl && curUrl.split('/') || [];
     const curUrlKeyword = curUrlKeywords.length > 1 ? curUrlKeywords[1] : '/'
-    // console.log('11', curUrl, curUrlKeywords, curUrlKeyword)
     return (
       <div className="headerBar">
         <section className="nav">
@@ -41,7 +40,7 @@ class HeaderBar extends Component {
             }
           </ul>
         </section>
-        <style>{`q
+        <style>{`
         .headerBar{
           font-size: 1rem;
           z-index: 900;
