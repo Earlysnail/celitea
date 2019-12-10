@@ -1,0 +1,11 @@
+{
+  "extends": "umi",
+  "rules": {
+    "no-console": 1,
+    "no-debugger": 1,
+    "init-declarations": 0,
+    "no-multiple-empty-lines": [1, {"max": 2}],
+    "no-nested-ternary": 0,
+    "no-redeclare": 0
+  }
+}

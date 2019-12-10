@@ -2,7 +2,6 @@ import { Component } from 'react'
 import theme from '../theme'
 import Router from 'next/router'
 import { MENU } from '../../config'
-import { Icon } from 'antd'
 class HeaderBar extends Component {
   constructor(props) {
     super(props)
@@ -42,8 +41,7 @@ class HeaderBar extends Component {
             }
           </ul>
         </section>
-        <Icon style={{ display: 'none' }}></Icon>
-        <style>{`
+        <style>{`q
         .headerBar{
           font-size: 1rem;
           z-index: 900;

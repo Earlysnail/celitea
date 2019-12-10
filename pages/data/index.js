@@ -1,12 +1,16 @@
 import Data from '../../modules/data'
 import withData from '../../config/withData'
 import { Layout } from '../../modules/common'
-
-export default  withData((props) => {
-    return(
-        <Layout {...props}>
-            <Data {...props}></Data>
-        </Layout>
- 
+import Head from 'next/head';
+export default withData((props) => {
+    return (
+        <div>
+            <Head>
+                <link rel='stylesheet' href='../../static/antd.css' />
+            </Head>
+            <Layout {...props}>
+                <Data {...props}></Data>
+            </Layout>
+        </div>
     )
 })

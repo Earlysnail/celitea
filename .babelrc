@@ -1,12 +1,35 @@
+// {
+//   "presets": ["next/babel"],
+//   "plugins": [
+//     [
+//       "import",
+//       {
+//         "libraryName": "antd",
+//         "style": "css"
+//       }
+//     ]
+//   ]
+// }
+
 {
-  "presets": ["next/babel"],
   "plugins": [
     [
-      "import",
+      "module-resolver", {
+        "root": ["."],
+        "alias": {
+          "styles": "./styles"
+        },
+        "cwd": "babelrc"
+    }],
+    [
+      "wrap-in-js",
       {
-        "libraryName": "antd",
-        "style": "css"
+        "extensions": ["css$", "scss$"]
       }
     ]
-  ]
+  ],
+  "presets": [
+    "next/babel"
+  ],
+  "ignore": []
 }
