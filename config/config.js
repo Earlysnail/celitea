@@ -2,6 +2,8 @@ const WORK_SPACE = {
   NAME: 'celitea'
 }
 
+const isMocks = true
+
 const PORT = 9000
 
 const MENU = [
@@ -33,5 +35,6 @@ const MENU = [
 export {
   WORK_SPACE,
   MENU,
-  PORT
+  PORT,
+  isMocks
 }

@@ -1,10 +1,9 @@
 
 import React, { Component } from 'react'
+import { getMember } from '../../ducks/index'
+import { connect } from 'react-redux'
 import { Timeline } from 'antd'
-const img1 = "../../static/1ys.jpg";
-const img2 = "../../static/2ys.jpg";
-const img3 = "../../static/5ys.jpg";
-const img4 = "../../static/4ys.jpg";
+
 
 class Data extends Component {
   constructor(props) {
@@ -12,79 +11,14 @@ class Data extends Component {
     this.state = {
     }
   }
+  componentWillMount(){
+    this.props.getMember()
+  }
   render() {
-    const array = [
-      {
-        name: '马文涛',
-        img: img1,
-        desc: '前端工程师'
-      }, {
-        name: '张璞',
-        img: img2,
-        desc: '软件工程师'
-      }, {
-        name: '孙立伟',
-        img: img3,
-        desc: '安卓工程师'
-      }, {
-        name: '陈少波',
-        img: img4,
-        desc: '软件工程师'
-      },{
-        name: '马文涛',
-        img: img1,
-        desc: '前端工程师'
-      }, {
-        name: '张璞',
-        img: img2,
-        desc: '软件工程师'
-      }, {
-        name: '孙立伟',
-        img: img3,
-        desc: '安卓工程师'
-      }, {
-        name: '陈少波',
-        img: img4,
-        desc: '软件工程师'
-      },{
-        name: '马文涛',
-        img: img1,
-        desc: '前端工程师'
-      }, {
-        name: '张璞',
-        img: img2,
-        desc: '软件工程师'
-      }, {
-        name: '孙立伟',
-        img: img3,
-        desc: '安卓工程师'
-      }, {
-        name: '陈少波',
-        img: img4,
-        desc: '软件工程师'
-      }
-    ]
-    var list = [
-      {
-        year: '2018',
-        desc: '18届毕业生',
-        members: array,
-        color: '#3564f3',
-        mark: false
-      }, {
-        year: '2019',
-        desc: '19届毕业生',
-        members: array,
-        color: '#345344',
-        mark: false
-      }, {
-        year: '2020',
-        desc: '20届毕业生',
-        members: array,
-        color: '#634343',
-        mark: false
-      },
-    ]
+    const list = this.props && this.props.member
+    console.log('111', list, this.props)
+    const num = parseInt(this.props.win && this.props.win.document && this.props.win.document.getElementsByClassName('menber') && this.props.win.document.getElementsByClassName('menber')[0] && this.props.win.document.getElementsByClassName('menber')[0].offsetWidth / 256) * 2
+    // const list =  []
     return (
       <div className='data'>
         <div className="operateLine">
@@ -102,16 +36,20 @@ class Data extends Component {
                     <div className="menber">
                       {
                         item.members.map((ele, index) => {
-                          return (
-                            <div id="wrap" key={index}>
-                              <div className="head">
-                                <div className="img">
-                                  <img src={ele.img}></img>
+                          console.log('num',num, index)
+                          if ((index < num - 2) || (index < 2)) {
+                            return (
+                              <div id="wrap" key={index}>
+                                <div className="head">
+                                  <div className="img">
+                                    <img src={ele.img}></img>
+                                  </div>
+                                  <h3>{ele.name}</h3>
                                 </div>
-                                <h3>{ele.name}</h3>
+                                <div className="desc">{ele.desc}</div>
                               </div>
-                              <div className="desc">{ele.desc}</div>
-                            </div>)
+                            )
+                          }
                         })
                       }
                     </div>
@@ -201,9 +139,20 @@ class Data extends Component {
   }
 }
 
-export default Data
 
-
+const mapStateToProps = ((state) => {
+  console.log('state', state)
+  return {
+    member: state.member.member
+  }
+})
+const mapDispatchToProps = {
+  getMember
+}
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Data)
 
 
 

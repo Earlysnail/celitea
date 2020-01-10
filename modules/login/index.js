@@ -16,9 +16,8 @@ class Login extends Component {
 
   }
   async submit() {
-    const username = this.state.username;
-    const password = this.state.password;
-    const data = await this.props.login({ username, password })
+    const { username, password } = this.state
+    const data = await this.props.login(username, password)
     if (data.code == 1) {
       console.log(data.message)
       return

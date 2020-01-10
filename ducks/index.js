@@ -1,13 +1,15 @@
 import { admin, login } from './login'
-
+import { member, getMember } from './data'
 
 
 
 
 export {
-  admin
+  admin,
+  member
 }
 
 export {
-  login
+  login,
+  getMember
 }
