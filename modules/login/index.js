@@ -15,13 +15,13 @@ class Login extends Component {
   componentDidMount() {
 
   }
-  async submit() {
+  submit = async () => {
     const { username, password } = this.state
-    const data = await this.props.login(username, password)
-    if (data.code == 1) {
-      console.log(data.message)
-      return
-    }
+    // const res = await this.props.login(username, password)
+    // if (res.code == 1) {
+    //   console.log(res.message)
+    //   return
+    // }
     Router.push('/link')
   }
   render() {
